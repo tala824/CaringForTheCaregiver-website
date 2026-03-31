@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — Caring for the Caregiver</title>
+  <meta name="description" content="Led by Dr. Caryn Blair, DNP, APRN, PMHNP-BC — a nursing-led practice with over 30 years of experience supporting caregivers navigating Alzheimer's and dementia.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* About page additions only */
+
+    .nav__links .nav__link--active {
+      color: var(--teal) !important;
+      font-weight: 600 !important;
+    }
+    .nav__links .nav__link--active::after {
+      width: 100%;
+    }
+
+    .page-hero {
+      padding: var(--space-2xl) 2rem var(--space-xl);
+      padding-top: calc(var(--space-2xl) + 80px);
+      background: var(--teal);
+      text-align: center;
+    }
+    .page-hero__container {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    .page-hero .section__eyebrow {
+      color: var(--mist-mid);
+    }
+    .page-hero__title {
+      color: var(--cream);
+      font-weight: 700;
+      margin-bottom: var(--space-md);
+    }
+    .page-hero__subtitle {
+      font-size: 1.25rem;
+      color: rgba(252, 250, 248, 0.75);
+      line-height: 1.8;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .mission {
+      padding: var(--space-2xl) 2rem;
+      background: var(--cream);
+    }
+    .mission__container {
+      max-width: 740px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .mission__body {
+      color: var(--text-light);
+      font-size: 1.15rem;
+      line-height: 1.8;
+    }
+
+    .story {
+      padding: var(--space-2xl) 2rem;
+      background: var(--cream);
+    }
+    .story__container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: var(--space-xl);
+      align-items: center;
+    }
+    .story__text p {
+      margin-bottom: var(--space-sm);
+      color: var(--text-light);
+      line-height: 1.8;
+    }
+    .story__pullquote {
+      background: var(--mist);
+      border-radius: 20px;
+      padding: var(--space-lg);
+      text-align: center;
+    }
+    .story__pullquote p {
+      font-family: var(--font-body);
+      font-size: clamp(1.2rem, 2vw, 1.5rem);
+      font-style: italic;
+      color: var(--teal);
+      line-height: 1.7;
+    }
+
+    .credentials {
+      padding: var(--space-2xl) 2rem;
+      background: var(--teal);
+    }
+    .credentials__container {
+      max-width: 740px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .credentials .section__eyebrow {
+      color: var(--mist-mid);
+    }
+    .credentials .section__title {
+      color: var(--cream);
+    }
+    .credentials__body {
+      color: rgba(252, 250, 248, 0.75);
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .services__grid--3col {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .evidence {
+      padding: var(--space-2xl) 2rem;
+      background: var(--cream);
+    }
+    .evidence__container {
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .evidence__body {
+      color: var(--text-light);
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .cta-about {
+      padding: var(--space-2xl) 2rem;
+      background: var(--mist);
+    }
+    .cta-about__container {
+      max-width: 620px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .cta-about__text {
+      color: var(--text-light);
+      font-size: 1.2rem;
+      margin-bottom: var(--space-lg);
+    }
+    .cta-about__actions {
+      display: flex;
+      gap: var(--space-sm);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .cta-about__secondary {
+      display: inline-block;
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      color: var(--text-light);
+      margin-top: var(--space-sm);
+      transition: color var(--transition);
+    }
+    .cta-about__secondary:hover {
+      color: var(--teal);
+    }
+
+    @media (max-width: 900px) {
+      .story__container {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+      }
+      .services__grid--3col {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 680px) {
+      .cta-about__actions {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="index.html" class="nav__logo">
+        <img src="blue logo.png" alt="Caring for the Caregiver logo" class="nav__logo-img">
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="nav__link--active">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="whom-we-serve.html">Whom We Serve</a></li>
+        <li><a href="approach.html">Approach</a></li>
+        <li><a href="index.html#contact" class="nav__cta">Request a Consultation</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <header class="page-hero">
+    <div class="page-hero__container">
+      <p class="section__eyebrow">About Us</p>
+      <h1 class="page-hero__title">The people holding everything together shouldn't have to do it alone.</h1>
+      <p class="page-hero__subtitle">We are a nursing-led health services practice built for caregivers navigating the hardest chapters of Alzheimer's and dementia care — with clinical depth, cultural awareness, and genuine compassion.</p>
+    </div>
+  </header>
+
+  <!-- Mission Statement -->
+  <section class="mission">
+    <div class="mission__container">
+      <p class="section__eyebrow">Our Mission</p>
+      <h2 class="section__title">Caring for the Caregiver exists to make sure the people holding everything together don't fall apart in the process.</h2>
+      <p class="mission__body">We provide nursing-led health services that support individuals and families navigating the complexities of Alzheimer's disease and related neurocognitive conditions — with clinical depth, cultural awareness, and genuine compassion at the center of everything we do.</p>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="story">
+    <div class="story__container">
+      <div class="story__text">
+        <p class="section__eyebrow">Our Story</p>
+        <h2 class="section__title">There's something most people don't talk about when a loved one is diagnosed with Alzheimer's or dementia.</h2>
+        <p>The sleepless nights. The behavioral changes that don't make sense. The questions no one seems to have clear answers to. The slow, quiet erosion of your own wellbeing as you pour everything into someone else's care.</p>
+        <p>You didn't sign up to navigate a complex healthcare landscape alone. And you shouldn't have to.</p>
+        <p><strong>Caring for the Caregiver</strong> was built for you — to provide the structured, clinical support that caregivers deserve but rarely receive.</p>
+      </div>
+      <div class="story__pullquote">
+        <p>"Because caring for someone you love shouldn't mean losing yourself in the process."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Credentials -->
+  <section class="credentials">
+    <div class="credentials__container">
+      <p class="section__eyebrow">Clinical Leadership</p>
+      <h2 class="section__title">Over 30 years of nursing experience — in your corner.</h2>
+      <p class="credentials__body">Caring for the Caregiver is led by Dr. Caryn Blair, DNP, APRN, PMHNP-BC — a Doctor of Nursing Practice-prepared clinician and board-certified Psychiatric-Mental Health Nurse Practitioner. With over three decades at the intersection of behavioral health, neurocognitive care, and real-world clinical practice, Dr. Blair brings a depth of expertise that is rare in this space. Our work is grounded in current nursing evidence-based practice. When we develop a care plan, it isn't generic. It's built around the specific behavioral health needs of your loved one, the specific pressures you're carrying as a caregiver, and the cultural context that shapes how your family experiences care.</p>
+    </div>
+  </section>
+
+  <!-- Services Snapshot -->
+  <section class="services">
+    <div class="services__container">
+      <p class="section__eyebrow">What We Offer</p>
+      <h2 class="section__title">Nursing-led services built for this journey.</h2>
+      <p class="services__intro">Every care plan is built around three things: your loved one's clinical needs, your needs as a caregiver, and the cultural context your family brings.</p>
+
+      <div class="services__grid services__grid--3col">
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="23" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="18" y="12" width="12" height="16" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M21 17h6M21 20h6M21 23h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M20 28v5h8v-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="24" cy="35" r="1" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title">Psychiatric-Mental Health Nursing Assessments</h3>
+          <p class="service-card__text">Thorough clinical evaluations that identify behavioral and cognitive patterns — providing clarity, not surface-level answers.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="23" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="18" cy="19" r="3" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="30" cy="19" r="3" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M14 29c0-3 3-5 10-5s10 2 10 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M24 24v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M20 28h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title">Caregiver-Inclusive Care Planning</h3>
+          <p class="service-card__text">You are not a bystander. We build care plans with you as an active participant — providing health information that supports informed decision-making.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="23" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M18 30c-2-1-4-3-4-6 0-3 2-5 5-5 1.5 0 3 .5 4 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M30 30c2-1 4-3 4-6 0-3-2-5-5-5-1.5 0-3 .5-4 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M20 30l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title">Supportive Nursing Services</h3>
+          <p class="service-card__text">Ongoing, responsive nursing care that evolves as needs change — because this journey doesn't stay still.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Evidence -->
+  <section class="evidence">
+    <div class="evidence__container">
+      <p class="section__eyebrow">Why It Matters</p>
+      <h2 class="section__title">The research is clear.</h2>
+      <p class="evidence__body">When caregivers have access to qualified health professionals and structured support, both their outcomes and the outcomes of those they care for improve. That connection is at the heart of everything we do. No matter where you are in the caregiving journey — newly diagnosed family, years into the process, or somewhere in between — Caring for the Caregiver meets you where you are, with the clinical expertise and human understanding this journey requires.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-about">
+    <div class="cta-about__container">
+      <p class="section__eyebrow">Get Started</p>
+      <h2 class="section__title">You deserve structured, expert support.</h2>
+      <p class="cta-about__text">Reaching out is the first step. Request a consultation and let's discuss how our nursing services can support you and your family.</p>
+      <div class="cta-about__actions">
+        <a href="index.html#contact" class="btn btn--primary">Request a Consultation</a>
+      </div>
+      <a href="index.html" class="cta-about__secondary">&larr; Back to Home</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <img src="white logo.png" alt="Caring for the Caregiver" class="footer__logo">
+          <p class="footer__tagline">Nursing-led support for those navigating Alzheimer's and dementia care.</p>
+        </div>
+        <div class="footer__links">
+          <div class="footer__col">
+            <h4>Navigate</h4>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="whom-we-serve.html">Whom We Serve</a>
+            <a href="approach.html">Approach</a>
+          </div>
+          <div class="footer__col">
+            <h4>Connect</h4>
+            <a href="index.html#contact">Request a Consultation</a>
+            <a href="mailto:carynforthecaregiver@gmail.com">Email Us</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2025 Caring for the Caregiver. All rights reserved.</p>
+        <p class="footer__crisis">If you are in crisis, please call the <strong>988 Suicide &amp; Crisis Lifeline</strong> by dialing <strong>988</strong>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

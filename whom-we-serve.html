@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whom We Serve — Caring for the Caregiver</title>
+  <meta name="description" content="Nursing-led support for family caregivers of individuals with Alzheimer's and dementia, healthcare professionals, and referral partners seeking specialized behavioral health guidance.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* Whom We Serve page additions only */
+
+    .nav__links .nav__link--active {
+      color: var(--teal) !important;
+      font-weight: 600 !important;
+    }
+    .nav__links .nav__link--active::after {
+      width: 100%;
+    }
+
+    .page-hero {
+      padding: var(--space-2xl) 2rem var(--space-xl);
+      padding-top: calc(var(--space-2xl) + 80px);
+      background: var(--teal);
+      text-align: center;
+    }
+    .page-hero__container {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    .page-hero .section__eyebrow {
+      color: var(--mist-mid);
+    }
+    .page-hero__title {
+      color: var(--cream);
+      font-weight: 700;
+      margin-bottom: var(--space-md);
+    }
+    .page-hero__subtitle {
+      font-size: 1.25rem;
+      color: rgba(252, 250, 248, 0.75);
+      line-height: 1.8;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    /* Audience sections */
+    .audience {
+      padding: var(--space-2xl) 2rem;
+    }
+    .audience--cream { background: var(--cream); }
+    .audience--mist  { background: var(--mist); }
+
+    .audience__container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: center;
+    }
+    .audience__container--reverse .audience__text {
+      order: 2;
+    }
+    .audience__container--reverse .audience__visual {
+      order: 1;
+    }
+
+    .audience__text p {
+      margin-bottom: var(--space-sm);
+      color: var(--text-light);
+      line-height: 1.8;
+    }
+    .audience__subheadline {
+      font-family: var(--font-body) !important;
+      font-weight: 400 !important;
+      font-style: italic;
+      color: var(--text) !important;
+      font-size: clamp(1.15rem, 2vw, 1.35rem) !important;
+      line-height: 1.6;
+      margin-bottom: var(--space-md);
+    }
+
+    .audience__card {
+      background: var(--mist);
+      border-radius: 20px;
+      padding: var(--space-lg);
+    }
+    .audience--mist .audience__card {
+      background: var(--cream);
+    }
+    .audience__card-label {
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: var(--space-sm);
+    }
+    .audience__card ul {
+      list-style: none;
+      padding: 0;
+    }
+    .audience__card li {
+      position: relative;
+      padding-left: 1.4rem;
+      margin-bottom: 0.6rem;
+      color: var(--text-light);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+    .audience__card li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--teal-light);
+    }
+
+    /* Centered single-column section */
+    .audience-centered {
+      padding: var(--space-2xl) 2rem;
+      background: var(--cream);
+    }
+    .audience-centered__container {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .audience-centered__body {
+      color: var(--text-light);
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    /* CTA */
+    .cta-serve {
+      padding: var(--space-2xl) 2rem;
+      background: var(--mist);
+    }
+    .cta-serve__container {
+      max-width: 620px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .cta-serve__text {
+      color: var(--text-light);
+      font-size: 1.2rem;
+      margin-bottom: var(--space-lg);
+    }
+    .cta-serve__actions {
+      display: flex;
+      gap: var(--space-sm);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .cta-serve__secondary {
+      display: inline-block;
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      color: var(--text-light);
+      margin-top: var(--space-sm);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color var(--transition);
+    }
+    .cta-serve__secondary:hover {
+      color: var(--teal);
+    }
+
+    @media (max-width: 900px) {
+      .audience__container,
+      .audience__container--reverse {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+      }
+      .audience__container--reverse .audience__text,
+      .audience__container--reverse .audience__visual {
+        order: 0;
+      }
+    }
+    @media (max-width: 680px) {
+      .cta-serve__actions {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="index.html" class="nav__logo">
+        <img src="blue logo.png" alt="Caring for the Caregiver logo" class="nav__logo-img">
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="whom-we-serve.html" class="nav__link--active">Whom We Serve</a></li>
+        <li><a href="approach.html">Approach</a></li>
+        <li><a href="index.html#contact" class="nav__cta">Request a Consultation</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <header class="page-hero">
+    <div class="page-hero__container">
+      <p class="section__eyebrow">Whom We Serve</p>
+      <h1 class="page-hero__title">You don't have to navigate this alone.</h1>
+      <p class="page-hero__subtitle">Our nursing-led services are designed for anyone affected by the complex realities of Alzheimer's disease and related neurocognitive conditions.</p>
+    </div>
+  </header>
+
+  <!-- Primary Audience: Family Caregivers -->
+  <section class="audience audience--cream">
+    <div class="audience__container">
+      <div class="audience__text">
+        <p class="section__eyebrow">Primary Audience</p>
+        <h2 class="section__title">Family caregivers navigating Alzheimer's and dementia.</h2>
+        <h3 class="audience__subheadline">The people doing the hardest work often receive the least support.</h3>
+        <p>If you are a family member caring for a loved one with Alzheimer's disease or a related neurocognitive condition, you are our primary focus. Whether you're a spouse, adult child, sibling, or extended family member — the behavioral changes, the decision fatigue, and the constant uncertainty take a toll that is real and measurable.</p>
+        <p>Our services are built specifically for you: to provide clinical clarity, structured care planning, and ongoing nursing support so that you're not facing this alone.</p>
+      </div>
+      <div class="audience__visual">
+        <div class="audience__card">
+          <p class="audience__card-label">You may be experiencing:</p>
+          <ul>
+            <li>Stress and uncertainty about your loved one's changing behavior</li>
+            <li>Decision fatigue from managing complex care without clinical guidance</li>
+            <li>Difficulty understanding what's part of the disease and what isn't</li>
+            <li>Isolation — feeling like no one truly understands what you're going through</li>
+            <li>Concern about your own wellbeing while prioritizing someone else's</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Secondary Audience: Healthcare Professionals -->
+  <section class="audience audience--mist">
+    <div class="audience__container audience__container--reverse">
+      <div class="audience__text">
+        <p class="section__eyebrow">Healthcare Professionals</p>
+        <h2 class="section__title">Referral partners seeking specialized behavioral health expertise.</h2>
+        <h3 class="audience__subheadline">When your patients' families need more than you can provide in a standard visit.</h3>
+        <p>If you are a healthcare professional — a primary care provider, geriatrician, neurologist, social worker, or case manager — you know that Alzheimer's and dementia care extends far beyond the patient. The family caregiver is a critical part of the care equation, and they often need specialized support that falls outside the scope of a standard clinical encounter.</p>
+        <p>Caring for the Caregiver can serve as a referral resource for your practice. Our DNP-prepared clinicians provide psychiatric-mental health nursing assessments, caregiver-inclusive care planning, and ongoing supportive nursing services that complement your existing treatment plans.</p>
+      </div>
+      <div class="audience__visual">
+        <div class="audience__card">
+          <p class="audience__card-label">We can support your practice by:</p>
+          <ul>
+            <li>Providing detailed psychiatric-mental health nursing assessments for complex cases</li>
+            <li>Developing caregiver-inclusive care plans that reinforce your clinical recommendations</li>
+            <li>Offering ongoing nursing support for families managing behavioral health challenges</li>
+            <li>Serving as a specialized referral resource for dementia-related caregiver needs</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Individuals Seeking Guidance -->
+  <section class="audience-centered">
+    <div class="audience-centered__container">
+      <p class="section__eyebrow">Individuals &amp; Families</p>
+      <h2 class="section__title">Anyone seeking specialized behavioral health guidance in dementia care.</h2>
+      <p class="audience-centered__body">You don't need to be in crisis to benefit from expert guidance. Whether you're early in the diagnostic journey, years into caregiving, or simply trying to understand what lies ahead — our nursing-led services meet you where you are. We provide the clinical structure and clear health information that help families make informed decisions with confidence rather than confusion.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-serve">
+    <div class="cta-serve__container">
+      <p class="section__eyebrow">Get Started</p>
+      <h2 class="section__title">Ready to take the first step?</h2>
+      <p class="cta-serve__text">Whether you're a family caregiver, a healthcare professional, or someone seeking guidance — we're here to help. Request a consultation and let's discuss how our services can support you.</p>
+      <div class="cta-serve__actions">
+        <a href="index.html#contact" class="btn btn--primary">Request a Consultation</a>
+      </div>
+      <a href="index.html" class="cta-serve__secondary">&larr; Back to Home</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <img src="white logo.png" alt="Caring for the Caregiver" class="footer__logo">
+          <p class="footer__tagline">Nursing-led support for those navigating Alzheimer's and dementia care.</p>
+        </div>
+        <div class="footer__links">
+          <div class="footer__col">
+            <h4>Navigate</h4>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="whom-we-serve.html">Whom We Serve</a>
+            <a href="approach.html">Approach</a>
+          </div>
+          <div class="footer__col">
+            <h4>Connect</h4>
+            <a href="index.html#contact">Request a Consultation</a>
+            <a href="mailto:carynforthecaregiver@gmail.com">Email Us</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2025 Caring for the Caregiver. All rights reserved.</p>
+        <p class="footer__crisis">If you are in crisis, please call the <strong>988 Suicide &amp; Crisis Lifeline</strong> by dialing <strong>988</strong>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

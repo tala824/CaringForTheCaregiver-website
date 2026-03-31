@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Approach — Caring for the Caregiver</title>
+  <meta name="description" content="Our structured, nursing-led approach to Alzheimer's and dementia care — from assessment through ongoing support. Led by Dr. Caryn Blair, DNP, APRN, PMHNP-BC.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* Approach page additions only */
+
+    .nav__links .nav__link--active {
+      color: var(--teal) !important;
+      font-weight: 600 !important;
+    }
+    .nav__links .nav__link--active::after {
+      width: 100%;
+    }
+
+    /* Page hero */
+    .page-hero {
+      padding: var(--space-2xl) 2rem var(--space-xl);
+      padding-top: calc(var(--space-2xl) + 80px);
+      background: var(--teal);
+      text-align: center;
+    }
+    .page-hero__container {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    .page-hero .section__eyebrow {
+      color: var(--mist-mid);
+    }
+    .page-hero__title {
+      color: var(--cream);
+      font-weight: 700;
+      margin-bottom: var(--space-md);
+    }
+    .page-hero__subtitle {
+      font-size: 1.25rem;
+      color: rgba(252, 250, 248, 0.75);
+      line-height: 1.8;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* Approach intro */
+    .approach-intro {
+      padding: var(--space-xl) 2rem var(--space-lg);
+      background: var(--cream);
+    }
+    .approach-intro__container {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .approach-intro__body {
+      font-size: 1.2rem;
+      color: var(--text-light);
+      line-height: 1.8;
+    }
+
+    /* Process steps */
+    .process-step {
+      padding: var(--space-2xl) 2rem;
+    }
+    .process-step--cream { background: var(--cream); }
+    .process-step--warm  { background: var(--gray-warm); }
+
+    .process-step__container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: var(--space-xl);
+      align-items: start;
+    }
+
+    .process-step__num {
+      font-family: var(--font-heading);
+      font-size: 7rem;
+      font-weight: 700;
+      color: var(--teal);
+      opacity: 0.12;
+      line-height: 1;
+      user-select: none;
+    }
+
+    .process-step__content p {
+      margin-bottom: var(--space-sm);
+      color: var(--text-light);
+      line-height: 1.8;
+    }
+
+    .process-step__subheadline {
+      font-family: var(--font-body) !important;
+      font-weight: 400 !important;
+      font-style: italic;
+      color: var(--text) !important;
+      font-size: clamp(1.15rem, 2vw, 1.35rem) !important;
+      line-height: 1.6;
+      margin-bottom: var(--space-md);
+    }
+
+    .process-step__quote {
+      margin: var(--space-md) 0 var(--space-md) var(--space-md);
+      padding-left: var(--space-md);
+      border-left: 2px solid var(--mist-mid);
+      font-family: var(--font-body);
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--teal);
+      line-height: 1.7;
+    }
+
+    /* Callout card (reuses services.html pattern) */
+    .process-callout {
+      margin-top: var(--space-lg);
+      padding: var(--space-md) var(--space-md) var(--space-md) var(--space-lg);
+      border-left: 3px solid var(--teal);
+      background: transparent;
+    }
+    .process-callout__label {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: var(--space-sm);
+    }
+    .process-callout ul {
+      list-style: none;
+      padding: 0;
+    }
+    .process-callout li {
+      position: relative;
+      padding-left: 1.4rem;
+      margin-bottom: 0.6rem;
+      color: var(--text-light);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+    .process-callout li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--teal-light);
+    }
+
+    /* Principles section (dark) */
+    .principles {
+      padding: var(--space-2xl) 2rem;
+      background: var(--teal);
+    }
+    .principles__container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      text-align: center;
+    }
+    .principles .section__eyebrow {
+      color: var(--mist-mid);
+    }
+    .principles .section__title {
+      color: var(--cream);
+    }
+    .principles__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-md);
+      margin-top: var(--space-lg);
+    }
+    .principle-card {
+      background: rgba(252, 250, 248, 0.08);
+      border: 1px solid rgba(252, 250, 248, 0.12);
+      border-radius: 16px;
+      padding: var(--space-lg) var(--space-md);
+      text-align: left;
+    }
+    .principle-card__icon {
+      width: 48px;
+      height: 48px;
+      color: var(--mist);
+      margin-bottom: var(--space-sm);
+    }
+    .principle-card__title {
+      color: var(--cream);
+      margin-bottom: var(--space-xs);
+      font-size: 1.25rem;
+    }
+    .principle-card__text {
+      color: rgba(252, 250, 248, 0.7);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    /* Who We Serve section */
+    .serve-section {
+      padding: var(--space-2xl) 2rem;
+      background: var(--cream);
+    }
+    .serve-section__container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      text-align: center;
+    }
+    .serve-section__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-md);
+      margin-top: var(--space-lg);
+      text-align: left;
+    }
+    .serve-card {
+      background: var(--mist);
+      border-radius: 16px;
+      padding: var(--space-lg) var(--space-md);
+    }
+    .serve-card__title {
+      margin-bottom: var(--space-sm);
+      font-size: 1.25rem;
+    }
+    .serve-card__text {
+      color: var(--text-light);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    /* Rates section */
+    .rates {
+      padding: var(--space-2xl) 2rem;
+      background: var(--gray-warm);
+    }
+    .rates__container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    .rates__header {
+      text-align: center;
+      margin-bottom: var(--space-xl);
+    }
+    .rates__intro {
+      max-width: 620px;
+      margin: 0 auto;
+      color: var(--text-light);
+      font-size: 1.15rem;
+    }
+    .rates__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: start;
+    }
+    .rates__col {
+      background: var(--cream);
+      border-radius: 16px;
+      padding: var(--space-lg) var(--space-md);
+    }
+    .rates__col-title {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--teal);
+      margin-bottom: var(--space-md);
+    }
+    .rate-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: var(--space-sm) 0;
+      border-bottom: 1px solid var(--mist-mid);
+    }
+    .rate-item:last-of-type {
+      border-bottom: none;
+    }
+    .rate-item__name {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .rate-item__detail {
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+    .rate-item__price {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--teal);
+      white-space: nowrap;
+    }
+    .rates__payment {
+      margin-top: var(--space-md);
+    }
+    .rates__payment-title {
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: var(--space-xs);
+    }
+    .rates__payment-methods {
+      font-size: 1rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+    .insurance-list {
+      list-style: none;
+      padding: 0;
+    }
+    .insurance-item {
+      padding: var(--space-sm) 0;
+      border-bottom: 1px solid var(--mist-mid);
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .insurance-item:last-child {
+      border-bottom: none;
+    }
+    .rates__fine-print {
+      max-width: var(--max-width);
+      margin: var(--space-lg) auto 0;
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--text-light);
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    /* CTA */
+    .cta-approach {
+      padding: var(--space-2xl) 2rem;
+      background: var(--mist);
+    }
+    .cta-approach__container {
+      max-width: 620px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .cta-approach__text {
+      color: var(--text-light);
+      font-size: 1.15rem;
+      margin-bottom: var(--space-lg);
+      line-height: 1.8;
+    }
+    .cta-approach__actions {
+      display: flex;
+      gap: var(--space-sm);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .cta-approach__secondary {
+      display: inline-block;
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      color: var(--text-light);
+      margin-top: var(--space-sm);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color var(--transition);
+    }
+    .cta-approach__secondary:hover {
+      color: var(--teal);
+    }
+    .cta-approach__note {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--text-light);
+      margin-top: var(--space-md);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .principles__grid {
+        grid-template-columns: 1fr;
+      }
+      .serve-section__grid {
+        grid-template-columns: 1fr;
+      }
+      .rates__grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 768px) {
+      .process-step__container {
+        grid-template-columns: 1fr;
+        gap: var(--space-sm);
+      }
+      .process-step__num {
+        font-size: 4.5rem;
+      }
+      .cta-approach__actions {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="index.html" class="nav__logo">
+        <img src="blue logo.png" alt="Caring for the Caregiver logo" class="nav__logo-img">
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="whom-we-serve.html">Whom We Serve</a></li>
+        <li><a href="approach.html" class="nav__link--active">Approach</a></li>
+        <li><a href="index.html#contact" class="nav__cta">Request a Consultation</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- SECTION 1 — Page Hero -->
+  <header class="page-hero">
+    <div class="page-hero__container">
+      <p class="section__eyebrow">Our Approach</p>
+      <h1 class="page-hero__title">Structured. Nursing-Led. Built Around You.</h1>
+      <p class="page-hero__subtitle">Led by Dr. Caryn Blair, DNP, APRN, PMHNP-BC — a Doctor of Nursing Practice–prepared clinician with over 30 years of nursing experience — every step of our process reflects both the depth of advanced nursing practice and the human reality of what caregiving actually feels like from the inside.</p>
+    </div>
+  </header>
+
+  <!-- SECTION 2 — Approach Intro -->
+  <section class="approach-intro">
+    <div class="approach-intro__container">
+      <p class="approach-intro__body">Most families navigating Alzheimer's or dementia care don't lack love or dedication. What they lack is clarity — a structured, clinical framework that helps them understand what's happening, what to expect, and how to keep moving forward without losing themselves in the process. That's exactly what our approach is designed to provide.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 3 — Four-Step Process -->
+
+  <!-- Step 01 -->
+  <section class="process-step process-step--cream">
+    <div class="process-step__container">
+      <div class="process-step__num">01</div>
+      <div class="process-step__content">
+        <p class="section__eyebrow">Step One</p>
+        <h2 class="section__title">Listen &amp; Understand</h2>
+        <h3 class="process-step__subheadline">We start where every good clinical relationship should — with your story.</h3>
+        <p>Before any assessment, before any care plan, we create space for a real conversation. Not a rushed intake. Not a form to fill out alone in a waiting room.</p>
+        <p>We want to understand who your loved one is beyond their diagnosis. We want to know what caregiving has looked like for you — the exhaustion, the grief that comes in waves, the moments of unexpected tenderness, and the days that feel unsurvivable.</p>
+        <p>This isn't a formality. It's the foundation. What we learn in this conversation shapes every clinical decision that follows.</p>
+        <blockquote class="process-step__quote">"You've spent a long time making sure everyone else feels heard. This is where someone finally does the same for you."</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step 02 -->
+  <section class="process-step process-step--warm">
+    <div class="process-step__container">
+      <div class="process-step__num">02</div>
+      <div class="process-step__content">
+        <p class="section__eyebrow">Step Two</p>
+        <h2 class="section__title">Assess &amp; Clarify</h2>
+        <h3 class="process-step__subheadline">You can't navigate what you can't see clearly.</h3>
+        <p>Once we understand your situation, our DNP-prepared Psychiatric-Mental Health Nurse Practitioners conduct a thorough, structured nursing assessment — one that looks at the full picture rather than isolated symptoms.</p>
+        <p>We evaluate the behavioral and cognitive patterns your loved one is experiencing. We look at the specific pressures you're carrying as a caregiver. We examine how those two realities are intersecting — and where clinical support can make the most meaningful difference.</p>
+        <p>What we're building is clarity. Because when you understand what's actually happening — clinically, behaviorally, emotionally — you stop reacting in the dark and start making decisions with confidence and purpose.</p>
+        <p>Every assessment is grounded in current nursing evidence-based practice. Nothing is assumed. Everything is evaluated with care and precision.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step 03 -->
+  <section class="process-step process-step--cream">
+    <div class="process-step__container">
+      <div class="process-step__num">03</div>
+      <div class="process-step__content">
+        <p class="section__eyebrow">Step Three</p>
+        <h2 class="section__title">Plan Together</h2>
+        <h3 class="process-step__subheadline">You belong at the table where decisions about your family are made.</h3>
+        <p>Most care plans are designed for the patient and handed to the caregiver as a set of instructions. Ours are built differently — with you as an active, informed participant in the process.</p>
+        <p>Because here's what the research consistently shows: your capacity, your wellbeing, and your understanding of the situation are not secondary concerns. They are clinically significant. What happens to you directly affects the quality of care your loved one receives. So you belong in the room where the plan is made.</p>
+
+        <aside class="process-callout">
+          <p class="process-callout__label">Working alongside our nursing team, we develop a care plan that is:</p>
+          <ul>
+            <li>Realistic about what you're actually carrying</li>
+            <li>Clinically grounded in nursing evidence-based practice</li>
+            <li>Shaped by cultural awareness and the specific dynamics of your family</li>
+            <li>Written in plain language you can act on — not clinical jargon that leaves you more confused than when you started</li>
+          </ul>
+        </aside>
+
+        <p>This is caregiver-inclusive care planning. Not directives. Not a pamphlet. A living plan that belongs to both of you.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step 04 -->
+  <section class="process-step process-step--warm">
+    <div class="process-step__container">
+      <div class="process-step__num">04</div>
+      <div class="process-step__content">
+        <p class="section__eyebrow">Step Four</p>
+        <h2 class="section__title">Support &amp; Adapt</h2>
+        <h3 class="process-step__subheadline">A diagnosis doesn't end. Neither do we.</h3>
+        <p>Alzheimer's and dementia are progressive conditions. The behavioral and cognitive challenges your loved one faces today will look different in six months, and different again after that. What you need from a care team will shift — and our supportive nursing services are designed to shift with you.</p>
+        <p>This is where the clinical relationship really takes root. Our Psychiatric-Mental Health Nurse Practitioners stay with your case over time — getting to know the full arc of your journey, not just a single snapshot of it. When something changes, we recalibrate. When something gets harder, we're already there.</p>
+        <p>You won't have to re-explain your situation every time you need support. You won't be handed a resource list and told to figure it out. You'll have a clinical presence that is ongoing, responsive, and genuinely invested in how this unfolds for your family.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4 — Core Principles -->
+  <section class="principles">
+    <div class="principles__container">
+      <p class="section__eyebrow">The Principles Behind Everything We Do</p>
+      <h2 class="section__title">Three commitments that guide every clinical decision we make.</h2>
+
+      <div class="principles__grid">
+        <div class="principle-card">
+          <div class="principle-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="23" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="16" y="10" width="16" height="22" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M20 16h8M20 20h8M20 24h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M24 32v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="24" cy="40" r="1" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3 class="principle-card__title">Evidence-Based Practice</h3>
+          <p class="principle-card__text">Every recommendation we make is grounded in current nursing research and clinical standards. We bring the science and the humanity together — because good care requires both.</p>
+        </div>
+
+        <div class="principle-card">
+          <div class="principle-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="23" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="24" cy="20" r="8" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M16 36c0-4 3.5-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M24 12v-2M32 20h2M16 20h-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="principle-card__title">Cultural Awareness &amp; Humility</h3>
+          <p class="principle-card__text">The way families experience illness, navigate difficult decisions, and communicate about care is shaped by culture, history, and relationship. We approach every family with genuine curiosity and respect.</p>
+        </div>
+
+        <div class="principle-card">
+          <div class="principle-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="23" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="24" cy="18" r="4" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M16 34c0-4 3.5-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M24 28c-2 1-3 3-3 5" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+              <path d="M21 24l3 2 3-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="principle-card__title">Caregiver-Centered Thinking</h3>
+          <p class="principle-card__text">When caregivers receive structured, qualified support, the people they care for do better. Your wellbeing is not a nice-to-have. It is clinically central to the work we do together.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5 — Who We Serve -->
+  <section class="serve-section">
+    <div class="serve-section__container">
+      <p class="section__eyebrow">Who We Serve</p>
+      <h2 class="section__title">Two groups of people who are often underserved by the broader healthcare system.</h2>
+
+      <div class="serve-section__grid">
+        <div class="serve-card">
+          <h3 class="serve-card__title">Family Caregivers</h3>
+          <p class="serve-card__text">If you are caring for a loved one with Alzheimer's disease or a related neurocognitive condition and you are experiencing stress, uncertainty, or decision fatigue, you are exactly who this practice was built for. You don't need to be in crisis to deserve support. You just need to be in it.</p>
+        </div>
+        <div class="serve-card">
+          <h3 class="serve-card__title">Professionals &amp; Referral Partners</h3>
+          <p class="serve-card__text">If you work alongside families navigating dementia care and are looking for a trusted, clinically credible nursing-led resource to refer to, we welcome that conversation. Our structured approach and DNP-level clinical leadership make us a reliable partner for professionals seeking high-quality support for their clients and patients.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6 — Rates & Insurance -->
+  <section class="rates">
+    <div class="rates__container">
+      <div class="rates__header">
+        <p class="section__eyebrow">Rates &amp; Insurance</p>
+        <h2 class="section__title">Transparent pricing — because uncertainty is the last thing you need right now.</h2>
+        <p class="rates__intro">We believe you should know exactly what to expect before you ever walk through the door. No surprises. No ambiguity.</p>
+      </div>
+
+      <div class="rates__grid">
+        <div class="rates__col">
+          <h3 class="rates__col-title">Pricing</h3>
+          <div class="rate-item">
+            <div>
+              <p class="rate-item__name">New Patient Appointment</p>
+              <p class="rate-item__detail">1 hour</p>
+            </div>
+            <span class="rate-item__price">$350</span>
+          </div>
+          <div class="rate-item">
+            <div>
+              <p class="rate-item__name">Follow-Up / Established Patient</p>
+              <p class="rate-item__detail">20 minutes</p>
+            </div>
+            <span class="rate-item__price">$175</span>
+          </div>
+          <div class="rates__payment">
+            <p class="rates__payment-title">Ways to Pay</p>
+            <p class="rates__payment-methods">American Express, Cash, Check, Discover, Mastercard, PayPal, Visa, Zelle</p>
+          </div>
+        </div>
+
+        <div class="rates__col">
+          <h3 class="rates__col-title">Accepted Insurance Plans</h3>
+          <ul class="insurance-list">
+            <li class="insurance-item">Aetna</li>
+            <li class="insurance-item">BlueCross BlueShield</li>
+            <li class="insurance-item">Cigna</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="rates__fine-print">For in-network services, please contact us for insurance verification prior to booking your appointment. Coverage is confirmed upon receipt of your insurance card (front and back) and a valid driver's license sent to our email. This verification step is quick — and it ensures you know exactly what your plan covers before we begin, so your focus can stay where it belongs.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 7 — CTA -->
+  <section class="cta-approach">
+    <div class="cta-approach__container">
+      <p class="section__eyebrow">Take the First Step</p>
+      <h2 class="section__title">Ready when you are.</h2>
+      <p class="cta-approach__text">There is no perfect moment to ask for help. There is only the moment you decide your family deserves it. Book a free consultation and let's begin with a conversation. We'll listen first — and everything else will follow from there.</p>
+      <div class="cta-approach__actions">
+        <a href="index.html#contact" class="btn btn--primary">Book a Free Consultation</a>
+      </div>
+      <a href="index.html" class="cta-approach__secondary">&larr; Back to Home</a>
+      <p class="cta-approach__note">No pressure. No obligation. Just the clarity you've been looking for.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <img src="white logo.png" alt="Caring for the Caregiver" class="footer__logo">
+          <p class="footer__tagline">Nursing-led support for those navigating Alzheimer's and dementia care.</p>
+        </div>
+        <div class="footer__links">
+          <div class="footer__col">
+            <h4>Navigate</h4>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="whom-we-serve.html">Whom We Serve</a>
+            <a href="approach.html">Approach</a>
+          </div>
+          <div class="footer__col">
+            <h4>Connect</h4>
+            <a href="index.html#contact">Request a Consultation</a>
+            <a href="mailto:carynforthecaregiver@gmail.com">Email Us</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2025 Caring for the Caregiver. All rights reserved.</p>
+        <p class="footer__crisis">If you are in crisis, please call the <strong>988 Suicide &amp; Crisis Lifeline</strong> by dialing <strong>988</strong>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

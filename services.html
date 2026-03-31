@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — Caring for the Caregiver</title>
+  <meta name="description" content="Nursing-led psychiatric-mental health assessments, caregiver-inclusive care planning, and supportive nursing services for family caregivers of individuals with Alzheimer's and dementia.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* Services page additions only */
+
+    .nav__links .nav__link--active {
+      color: var(--teal) !important;
+      font-weight: 600 !important;
+    }
+    .nav__links .nav__link--active::after {
+      width: 100%;
+    }
+
+    .page-hero {
+      padding: var(--space-2xl) 2rem var(--space-xl);
+      padding-top: calc(var(--space-2xl) + 80px);
+      background: var(--teal);
+      text-align: center;
+    }
+    .page-hero__container {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    .page-hero .section__eyebrow {
+      color: var(--mist-mid);
+    }
+    .page-hero__title {
+      color: var(--cream);
+      font-weight: 700;
+      margin-bottom: var(--space-md);
+    }
+    .page-hero__subtitle {
+      font-size: 1.25rem;
+      color: rgba(252, 250, 248, 0.75);
+      line-height: 1.8;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .svc-detail {
+      padding: var(--space-2xl) 2rem;
+    }
+    .svc-detail--cream { background: var(--cream); }
+    .svc-detail--mist  { background: var(--mist); }
+
+    .svc-detail__container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: var(--space-xl);
+      align-items: start;
+    }
+
+    .svc-detail__container--reverse {
+      grid-template-columns: 1fr auto;
+    }
+    .svc-detail__container--reverse .svc-detail__accent {
+      order: 2;
+    }
+    .svc-detail__container--reverse .svc-detail__content {
+      order: 1;
+    }
+
+    .svc-detail__accent {
+      font-family: var(--font-heading);
+      font-size: 6rem;
+      font-weight: 700;
+      color: var(--mist-mid);
+      line-height: 1;
+      padding-top: 0.2rem;
+      user-select: none;
+    }
+    .svc-detail--mist .svc-detail__accent {
+      color: var(--cream);
+    }
+
+    .svc-detail__content p {
+      margin-bottom: var(--space-sm);
+      color: var(--text-light);
+      line-height: 1.8;
+    }
+
+    .svc-detail__subheadline {
+      font-family: var(--font-body) !important;
+      font-weight: 400 !important;
+      font-style: italic;
+      color: var(--text) !important;
+      font-size: clamp(1.15rem, 2vw, 1.35rem) !important;
+      line-height: 1.6;
+      margin-bottom: var(--space-md);
+    }
+
+    .svc-callout {
+      margin-top: var(--space-lg);
+      padding: var(--space-md) var(--space-md) var(--space-md) var(--space-lg);
+      border-left: 3px solid var(--teal);
+      background: transparent;
+    }
+    .svc-callout__label {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: var(--space-sm);
+    }
+    .svc-callout ul {
+      list-style: none;
+      padding: 0;
+    }
+    .svc-callout li {
+      position: relative;
+      padding-left: 1.4rem;
+      margin-bottom: 0.6rem;
+      color: var(--text-light);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+    .svc-callout li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--teal-light);
+    }
+
+    .svc-callout-grid {
+      margin-top: var(--space-lg);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-md);
+    }
+    .svc-callout-grid .svc-callout {
+      margin-top: 0;
+    }
+    .svc-callout--light {
+      background: var(--mist);
+      border-left: none;
+      border-radius: var(--radius);
+      padding: var(--space-md);
+    }
+
+    .scope-note {
+      padding: var(--space-2xl) 2rem;
+      background: var(--mist);
+    }
+    .scope-note__container {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .scope-note__title {
+      font-family: var(--font-body) !important;
+      font-weight: 500 !important;
+      font-style: normal;
+      font-size: clamp(1.6rem, 3vw, 2.2rem) !important;
+      color: var(--teal);
+      margin-bottom: var(--space-md);
+    }
+    .scope-note__body {
+      color: var(--text-light);
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .cta-services {
+      padding: var(--space-2xl) 2rem;
+      background: var(--cream);
+    }
+    .cta-services__container {
+      max-width: 620px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .cta-services__text {
+      color: var(--text-light);
+      font-size: 1.2rem;
+      margin-bottom: var(--space-lg);
+    }
+    .cta-services__actions {
+      display: flex;
+      gap: var(--space-sm);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .cta-services__secondary {
+      display: inline-block;
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      color: var(--text-light);
+      margin-top: var(--space-sm);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color var(--transition);
+    }
+    .cta-services__secondary:hover {
+      color: var(--teal);
+    }
+    .cta-services__note {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      margin-top: var(--space-md);
+    }
+
+    @media (max-width: 768px) {
+      .svc-detail__container,
+      .svc-detail__container--reverse {
+        grid-template-columns: 1fr;
+        gap: var(--space-sm);
+      }
+      .svc-detail__container--reverse .svc-detail__accent {
+        order: 0;
+      }
+      .svc-detail__container--reverse .svc-detail__content {
+        order: 0;
+      }
+      .svc-detail__accent {
+        font-size: 4rem;
+      }
+      .svc-callout-grid {
+        grid-template-columns: 1fr;
+      }
+      .cta-services__actions {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="index.html" class="nav__logo">
+        <img src="blue logo.png" alt="Caring for the Caregiver logo" class="nav__logo-img">
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="nav__link--active">Services</a></li>
+        <li><a href="whom-we-serve.html">Whom We Serve</a></li>
+        <li><a href="approach.html">Approach</a></li>
+        <li><a href="index.html#contact" class="nav__cta">Request a Consultation</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <header class="page-hero">
+    <div class="page-hero__container">
+      <p class="section__eyebrow">Our Services</p>
+      <h1 class="page-hero__title">What You're Carrying Is Real. So Is the Support We Offer.</h1>
+      <p class="page-hero__subtitle">Everything we offer is nursing-led, evidence-based, and built around both the person living with the condition and the person caring for them.</p>
+    </div>
+  </header>
+
+  <!-- Service 1: Assessment -->
+  <section class="svc-detail svc-detail--cream">
+    <div class="svc-detail__container">
+      <div class="svc-detail__accent">01</div>
+      <div class="svc-detail__content">
+        <p class="section__eyebrow">Service One</p>
+        <h2 class="section__title">Psychiatric-Mental Health Nursing Assessment</h2>
+        <h3 class="svc-detail__subheadline">Before anything can change, you need to understand what you're actually dealing with.</h3>
+
+        <p>Many caregivers come to us exhausted, overwhelmed, and unsure whether what they're experiencing is "normal." Most of the time, they've been managing complex behavioral and cognitive dynamics for months — sometimes years — without ever having a clinician examine the full clinical picture.</p>
+        <p>That's where we start.</p>
+        <p>Our psychiatric-mental health nursing assessments are conducted by DNP-prepared clinicians with deep experience in neurocognitive conditions and behavioral health. This isn't a brief intake form. It's a thorough, thoughtful clinical evaluation that examines the cognitive and behavioral patterns of your loved one alongside the impact those patterns are placing on you as a caregiver.</p>
+        <p>What comes out of this assessment isn't a generic summary — it's clarity. A clear clinical picture that becomes the foundation of everything we do next.</p>
+
+        <aside class="svc-callout">
+          <p class="svc-callout__label">This service is for you if:</p>
+          <ul>
+            <li>Your loved one's behavior has become increasingly difficult to understand or manage</li>
+            <li>You're not sure whether what you're observing is part of the disease progression or something else</li>
+            <li>You've been relying on instinct and feel you need structured clinical guidance</li>
+            <li>You want to understand what's happening — not just be given general information</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service 2: Care Planning (reversed layout) -->
+  <section class="svc-detail svc-detail--mist">
+    <div class="svc-detail__container svc-detail__container--reverse">
+      <div class="svc-detail__accent">02</div>
+      <div class="svc-detail__content">
+        <p class="section__eyebrow">Service Two</p>
+        <h2 class="section__title">Caregiver-Inclusive Care Planning</h2>
+        <h3 class="svc-detail__subheadline">You're not a bystander in your loved one's care. It's time the care plan reflected that.</h3>
+
+        <p>Most care plans are written about the patient. Ours are developed with the caregiver as an active participant — because what happens to you directly affects the quality of care your loved one receives. That's not an opinion. It's documented in the clinical literature.</p>
+        <p>Our caregiver-inclusive care planning brings you into the process as an informed participant. Working alongside our DNP-prepared nursing team, you'll receive clear, clinically grounded health information that helps you understand what your loved one is experiencing — and what to realistically expect as the condition progresses. We translate complex clinical information into language that supports real decision-making.</p>
+        <p>This isn't about telling you what to do. It's about making sure you have the health information you need to navigate this — with confidence, not confusion.</p>
+
+        <div class="svc-callout-grid">
+          <div class="svc-callout svc-callout--light">
+            <p class="svc-callout__label">What this looks like in practice:</p>
+            <ul>
+              <li>Care goals that account for both your loved one's needs and your capacity as a caregiver</li>
+              <li>Health information delivered in plain, clear language — not clinical jargon</li>
+              <li>Guidance on behavioral patterns, daily care, and what changes to anticipate</li>
+              <li>A plan that evolves as your loved one's condition evolves</li>
+            </ul>
+          </div>
+          <aside class="svc-callout">
+            <p class="svc-callout__label">This service is for you if:</p>
+            <ul>
+              <li>You feel like you're always one step behind and never sure what's coming next</li>
+              <li>You want to be part of the decision-making, not just carrying out someone else's plan</li>
+              <li>You're trying to balance quality care with your own limits and wellbeing</li>
+              <li>You need clear health information, not vague reassurances</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service 3: Supportive Nursing -->
+  <section class="svc-detail svc-detail--cream">
+    <div class="svc-detail__container">
+      <div class="svc-detail__accent">03</div>
+      <div class="svc-detail__content">
+        <p class="section__eyebrow">Service Three</p>
+        <h2 class="section__title">Supportive Nursing Services</h2>
+        <h3 class="svc-detail__subheadline">A diagnosis doesn't end. Neither does our support.</h3>
+
+        <p>Alzheimer's and dementia are not static conditions. The behavioral and cognitive challenges your loved one faces today may look entirely different in six months. What you need from a clinical team will shift too — and we shift with you.</p>
+        <p>Our supportive nursing services are designed to be ongoing and responsive. Led by Psychiatric-Mental Health Nurse Practitioners and DNP-prepared clinicians, this is where the clinical relationship takes root. We're not here to hand you a plan and disappear. We're here to walk alongside you as things change — adjusting, recalibrating, and ensuring you're never left navigating behavioral changes on your own.</p>
+        <p>These services address the behavioral health dimensions of Alzheimer's care that are often the most difficult to manage: mood changes, agitation, sleep disruption, withdrawal, and the complexity of watching someone you love become someone different.</p>
+
+        <aside class="svc-callout">
+          <p class="svc-callout__label">This service is for you if:</p>
+          <ul>
+            <li>You're already in the caregiving journey and need a consistent clinical presence</li>
+            <li>The behavioral symptoms of your loved one's condition have become harder to manage</li>
+            <li>You want a team that knows your situation and can respond when things change</li>
+            <li>You've been trying to manage everything alone and you're ready for expert support</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scope Note -->
+  <section class="scope-note">
+    <div class="scope-note__container">
+      <p class="section__eyebrow">Scope of Services</p>
+      <h2 class="scope-note__title">We believe clarity is a form of care.</h2>
+      <p class="scope-note__body">We want to be straightforward about what we offer and what falls outside our scope. Caring for the Caregiver does not provide physician medical services, psychiatric evaluations or medication management, individual counseling or psychotherapy, caregiver education workshops or seminars, advocacy training, or community-based support groups. What we offer is specialized, nursing-led clinical care — and we do it with full focus and without compromise. If you're looking for something outside our scope, we'll do our best to connect you with the right resources. That's part of taking care of you too.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-services">
+    <div class="cta-services__container">
+      <p class="section__eyebrow">Get Started</p>
+      <h2 class="section__title">You deserve structured, expert support.</h2>
+      <p class="cta-services__text">You don't need to have everything figured out before you reach out. You just need to decide that you're worth the same level of care you give everyone else.</p>
+      <div class="cta-services__actions">
+        <a href="index.html#contact" class="btn btn--primary">Request a Consultation</a>
+      </div>
+      <a href="index.html" class="cta-services__secondary">&larr; Back to Home</a>
+      <p class="cta-services__note">No pressure. No obligation. Just a real conversation with someone who understands.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <img src="white logo.png" alt="Caring for the Caregiver" class="footer__logo">
+          <p class="footer__tagline">Nursing-led support for those navigating Alzheimer's and dementia care.</p>
+        </div>
+        <div class="footer__links">
+          <div class="footer__col">
+            <h4>Navigate</h4>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="whom-we-serve.html">Whom We Serve</a>
+            <a href="approach.html">Approach</a>
+          </div>
+          <div class="footer__col">
+            <h4>Connect</h4>
+            <a href="index.html#contact">Request a Consultation</a>
+            <a href="mailto:carynforthecaregiver@gmail.com">Email Us</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2025 Caring for the Caregiver. All rights reserved.</p>
+        <p class="footer__crisis">If you are in crisis, please call the <strong>988 Suicide &amp; Crisis Lifeline</strong> by dialing <strong>988</strong>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
