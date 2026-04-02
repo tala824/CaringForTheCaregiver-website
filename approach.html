@@ -382,6 +382,27 @@
       margin-top: var(--space-md);
     }
 
+    /* Approach banner image */
+    .approach-banner {
+      position: relative;
+      height: 320px;
+      overflow: hidden;
+    }
+    .approach-banner img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+    .approach-banner__overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(46,139,138,0.25);
+      z-index: 1;
+    }
+
     /* Responsive */
     @media (max-width: 900px) {
       .principles__grid {
@@ -405,6 +426,9 @@
       .cta-approach__actions {
         flex-direction: column;
         align-items: center;
+      }
+      .approach-banner {
+        height: 220px;
       }
     }
   </style>
@@ -444,8 +468,13 @@
 
   <!-- SECTION 2 — Approach Intro -->
   <section class="approach-intro">
-    <div class="approach-intro__container">
-      <p class="approach-intro__body">Most families navigating Alzheimer's or dementia care don't lack love or dedication. What they lack is clarity — a structured, clinical framework that helps them understand what's happening, what to expect, and how to keep moving forward without losing themselves in the process. That's exactly what our approach is designed to provide.</p>
+    <div class="approach-intro__container" style="max-width: var(--max-width); display: flex; gap: 48px; align-items: center; flex-wrap: wrap; text-align: left;">
+      <div style="flex: 1; min-width: 280px;">
+        <p class="approach-intro__body">Most families navigating Alzheimer's or dementia care don't lack love or dedication. What they lack is clarity — a structured, clinical framework that helps them understand what's happening, what to expect, and how to keep moving forward without losing themselves in the process. That's exactly what our approach is designed to provide.</p>
+      </div>
+      <div style="flex: 0 0 45%; min-width: 280px;">
+        <img src="11.jpg" alt="Our approach to care" style="width: 100%; height: 420px; object-fit: cover; border-radius: 12px;">
+      </div>
     </div>
   </section>
 
@@ -522,6 +551,12 @@
         <p>You won't have to re-explain your situation every time you need support. You won't be handed a resource list and told to figure it out. You'll have a clinical presence that is ongoing, responsive, and genuinely invested in how this unfolds for your family.</p>
       </div>
     </div>
+  </section>
+
+  <!-- Atmospheric Banner -->
+  <section class="approach-banner">
+    <img src="12.jpg" alt="">
+    <div class="approach-banner__overlay"></div>
   </section>
 
   <!-- SECTION 4 — Core Principles -->

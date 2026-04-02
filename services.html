@@ -56,9 +56,10 @@
       max-width: var(--max-width);
       margin: 0 auto;
       display: grid;
-      grid-template-columns: auto 1fr;
+      grid-template-columns: 1fr;
       gap: var(--space-xl);
       align-items: start;
+      position: relative;
     }
 
     .svc-detail__container--reverse {
@@ -72,16 +73,21 @@
     }
 
     .svc-detail__accent {
+      position: absolute;
+      top: 0;
+      left: 0;
       font-family: var(--font-heading);
-      font-size: 6rem;
+      font-size: 8rem;
       font-weight: 700;
       color: var(--mist-mid);
       line-height: 1;
-      padding-top: 0.2rem;
+      opacity: 0.15;
       user-select: none;
+      pointer-events: none;
     }
     .svc-detail--mist .svc-detail__accent {
       color: var(--cream);
+      opacity: 0.3;
     }
 
     .svc-detail__content p {
@@ -217,10 +223,18 @@
       margin-top: var(--space-md);
     }
 
+    /* Service section images */
+    .svc-img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
     @media (max-width: 768px) {
       .svc-detail__container,
       .svc-detail__container--reverse {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
         gap: var(--space-sm);
       }
       .svc-detail__container--reverse .svc-detail__accent {
@@ -238,6 +252,12 @@
       .cta-services__actions {
         flex-direction: column;
         align-items: center;
+      }
+      .svc-img-wrap {
+        order: 99 !important;
+      }
+      .svc-img {
+        height: 300px;
       }
     }
   </style>
@@ -277,7 +297,7 @@
 
   <!-- Service 1: Assessment -->
   <section class="svc-detail svc-detail--cream">
-    <div class="svc-detail__container">
+    <div class="svc-detail__container" style="grid-template-columns: 1fr 30%;">
       <div class="svc-detail__accent">01</div>
       <div class="svc-detail__content">
         <p class="section__eyebrow">Service One</p>
@@ -289,22 +309,27 @@
         <p>Our psychiatric-mental health nursing assessments are conducted by DNP-prepared clinicians with deep experience in neurocognitive conditions and behavioral health. This isn't a brief intake form. It's a thorough, thoughtful clinical evaluation that examines the cognitive and behavioral patterns of your loved one alongside the impact those patterns are placing on you as a caregiver.</p>
         <p>What comes out of this assessment isn't a generic summary — it's clarity. A clear clinical picture that becomes the foundation of everything we do next.</p>
 
-        <aside class="svc-callout">
-          <p class="svc-callout__label">This service is for you if:</p>
-          <ul>
-            <li>Your loved one's behavior has become increasingly difficult to understand or manage</li>
-            <li>You're not sure whether what you're observing is part of the disease progression or something else</li>
-            <li>You've been relying on instinct and feel you need structured clinical guidance</li>
-            <li>You want to understand what's happening — not just be given general information</li>
-          </ul>
-        </aside>
       </div>
+      <div class="svc-img-wrap">
+        <img src="6.jpg" alt="Psychiatric-Mental Health Nursing Assessment" class="svc-img">
+      </div>
+    </div>
+    <div style="max-width: var(--max-width); margin: 0 auto; padding: 0 2rem;">
+      <aside class="svc-callout">
+        <p class="svc-callout__label">This service is for you if:</p>
+        <ul>
+          <li>Your loved one's behavior has become increasingly difficult to understand or manage</li>
+          <li>You're not sure whether what you're observing is part of the disease progression or something else</li>
+          <li>You've been relying on instinct and feel you need structured clinical guidance</li>
+          <li>You want to understand what's happening — not just be given general information</li>
+        </ul>
+      </aside>
     </div>
   </section>
 
   <!-- Service 2: Care Planning (reversed layout) -->
   <section class="svc-detail svc-detail--mist">
-    <div class="svc-detail__container svc-detail__container--reverse">
+    <div class="svc-detail__container svc-detail__container--reverse" style="grid-template-columns: 30% 1fr;">
       <div class="svc-detail__accent">02</div>
       <div class="svc-detail__content">
         <p class="section__eyebrow">Service Two</p>
@@ -315,33 +340,38 @@
         <p>Our caregiver-inclusive care planning brings you into the process as an informed participant. Working alongside our DNP-prepared nursing team, you'll receive clear, clinically grounded health information that helps you understand what your loved one is experiencing — and what to realistically expect as the condition progresses. We translate complex clinical information into language that supports real decision-making.</p>
         <p>This isn't about telling you what to do. It's about making sure you have the health information you need to navigate this — with confidence, not confusion.</p>
 
-        <div class="svc-callout-grid">
-          <div class="svc-callout svc-callout--light">
-            <p class="svc-callout__label">What this looks like in practice:</p>
-            <ul>
-              <li>Care goals that account for both your loved one's needs and your capacity as a caregiver</li>
-              <li>Health information delivered in plain, clear language — not clinical jargon</li>
-              <li>Guidance on behavioral patterns, daily care, and what changes to anticipate</li>
-              <li>A plan that evolves as your loved one's condition evolves</li>
-            </ul>
-          </div>
-          <aside class="svc-callout">
-            <p class="svc-callout__label">This service is for you if:</p>
-            <ul>
-              <li>You feel like you're always one step behind and never sure what's coming next</li>
-              <li>You want to be part of the decision-making, not just carrying out someone else's plan</li>
-              <li>You're trying to balance quality care with your own limits and wellbeing</li>
-              <li>You need clear health information, not vague reassurances</li>
-            </ul>
-          </aside>
+      </div>
+      <div class="svc-img-wrap" style="order: 0;">
+        <img src="7.jpg" alt="Caregiver-Inclusive Care Planning" class="svc-img">
+      </div>
+    </div>
+    <div style="max-width: var(--max-width); margin: 0 auto; padding: 0 2rem;">
+      <div class="svc-callout-grid">
+        <div class="svc-callout svc-callout--light">
+          <p class="svc-callout__label">What this looks like in practice:</p>
+          <ul>
+            <li>Care goals that account for both your loved one's needs and your capacity as a caregiver</li>
+            <li>Health information delivered in plain, clear language — not clinical jargon</li>
+            <li>Guidance on behavioral patterns, daily care, and what changes to anticipate</li>
+            <li>A plan that evolves as your loved one's condition evolves</li>
+          </ul>
         </div>
+        <aside class="svc-callout">
+          <p class="svc-callout__label">This service is for you if:</p>
+          <ul>
+            <li>You feel like you're always one step behind and never sure what's coming next</li>
+            <li>You want to be part of the decision-making, not just carrying out someone else's plan</li>
+            <li>You're trying to balance quality care with your own limits and wellbeing</li>
+            <li>You need clear health information, not vague reassurances</li>
+          </ul>
+        </aside>
       </div>
     </div>
   </section>
 
   <!-- Service 3: Supportive Nursing -->
   <section class="svc-detail svc-detail--cream">
-    <div class="svc-detail__container">
+    <div class="svc-detail__container" style="grid-template-columns: 1fr 30%;">
       <div class="svc-detail__accent">03</div>
       <div class="svc-detail__content">
         <p class="section__eyebrow">Service Three</p>
@@ -352,16 +382,21 @@
         <p>Our supportive nursing services are designed to be ongoing and responsive. Led by Psychiatric-Mental Health Nurse Practitioners and DNP-prepared clinicians, this is where the clinical relationship takes root. We're not here to hand you a plan and disappear. We're here to walk alongside you as things change — adjusting, recalibrating, and ensuring you're never left navigating behavioral changes on your own.</p>
         <p>These services address the behavioral health dimensions of Alzheimer's care that are often the most difficult to manage: mood changes, agitation, sleep disruption, withdrawal, and the complexity of watching someone you love become someone different.</p>
 
-        <aside class="svc-callout">
-          <p class="svc-callout__label">This service is for you if:</p>
-          <ul>
-            <li>You're already in the caregiving journey and need a consistent clinical presence</li>
-            <li>The behavioral symptoms of your loved one's condition have become harder to manage</li>
-            <li>You want a team that knows your situation and can respond when things change</li>
-            <li>You've been trying to manage everything alone and you're ready for expert support</li>
-          </ul>
-        </aside>
       </div>
+      <div class="svc-img-wrap">
+        <img src="8.jpg" alt="Supportive Nursing Services" class="svc-img">
+      </div>
+    </div>
+    <div style="max-width: var(--max-width); margin: 0 auto; padding: 0 2rem;">
+      <aside class="svc-callout">
+        <p class="svc-callout__label">This service is for you if:</p>
+        <ul>
+          <li>You're already in the caregiving journey and need a consistent clinical presence</li>
+          <li>The behavioral symptoms of your loved one's condition have become harder to manage</li>
+          <li>You want a team that knows your situation and can respond when things change</li>
+          <li>You've been trying to manage everything alone and you're ready for expert support</li>
+        </ul>
+      </aside>
     </div>
   </section>
 

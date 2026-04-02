@@ -35,15 +35,17 @@
   </nav>
 
   <!-- Hero -->
-  <header class="hero">
-    <div class="hero__container">
+  <header class="hero" style="background: none;">
+    <img src="1.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+    <div style="position: absolute; inset: 0; background: rgba(46,139,138,0.45); z-index: 1;"></div>
+    <div class="hero__container" style="position: relative; z-index: 2;">
       <div class="hero__content">
-        <p class="hero__eyebrow">Nursing-Led Alzheimer's &amp; Dementia Care</p>
-        <h1 class="hero__title">Expert Nursing-Led Support for Alzheimer's and Dementia Care</h1>
-        <p class="hero__subtitle">Led by a Doctor of Nursing Practice–prepared clinician with over 30 years of nursing experience, providing clear, compassionate guidance for complex behavioral health needs.</p>
+        <p class="hero__eyebrow" style="color: rgba(255,255,255,0.85);">Nursing-Led Alzheimer's &amp; Dementia Care</p>
+        <h1 class="hero__title" style="color: #FFFFFF;">Expert Nursing-Led Support for Alzheimer's and Dementia Care</h1>
+        <p class="hero__subtitle" style="color: rgba(255,255,255,0.85);">Led by a Doctor of Nursing Practice–prepared clinician with over 30 years of nursing experience, providing clear, compassionate guidance for complex behavioral health needs.</p>
         <div class="hero__actions">
-          <a href="#contact" class="btn btn--primary">Request a Consultation</a>
-          <a href="about.html" class="btn btn--ghost">Learn More</a>
+          <a href="#contact" class="btn btn--primary" style="background-color: #FFFFFF; color: #2A7C7C; border-color: #FFFFFF;">Request a Consultation</a>
+          <a href="about.html" class="btn btn--ghost" style="color: #FFFFFF; border-color: #FFFFFF; background: rgba(255,255,255,0.15);">Learn More</a>
         </div>
       </div>
     </div>
@@ -81,7 +83,8 @@
         <p>You don't have to navigate this alone.</p>
       </div>
       <div class="about__visual">
-        <img src="dr-caryn-blair.png" alt="Dr. Caryn Blair, DNP, APRN, PMHNP-BC" class="about__photo">
+        <img src="4 (2).png" alt="Dr. Caryn Blair" style="width: 100%; max-width: 400px; height: 420px; object-fit: cover; border-radius: 12px;">
+        <p style="font-family: var(--font-heading); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.06em; color: var(--teal); text-align: center; margin-top: 0.75rem;">Dr. Caryn Blair, DNP, APRN, PMHNP-BC</p>
       </div>
     </div>
   </section>
@@ -215,33 +218,35 @@
   </section>
 
   <!-- Contact / Consultation -->
-  <section class="contact" id="contact">
-    <div class="contact__container">
-      <p class="section__eyebrow" style="text-align:center;">Get Started</p>
-      <h2 class="section__title" style="text-align:center;">Request a Consultation</h2>
-      <p class="contact__text" style="text-align:center; max-width:640px; margin:0 auto var(--space-lg);">You don't need to have everything figured out before reaching out. Tell us about your situation, and we'll discuss how our nursing services can support you.</p>
+  <section class="contact" id="contact" style="position: relative; overflow: hidden;">
+    <img src="13.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+    <div style="position: absolute; inset: 0; background: rgba(46,139,138,0.40); z-index: 1;"></div>
+    <div class="contact__container" style="position: relative; z-index: 2;">
+      <p class="section__eyebrow" style="text-align:center; color: rgba(255,255,255,0.85);">Get Started</p>
+      <h2 class="section__title" style="text-align:center; color: #FFFFFF;">Request a Consultation</h2>
+      <p class="contact__text" style="text-align:center; max-width:640px; margin:0 auto var(--space-lg); color: rgba(255,255,255,0.85);">You don't need to have everything figured out before reaching out. Tell us about your situation, and we'll discuss how our nursing services can support you.</p>
 
       <div class="contact__layout">
         <div class="contact__content">
-          <form class="contact__form" id="contactForm">
+          <form class="contact__form" id="contactForm" style="--label-color: #FFFFFF;">
             <div class="form__group">
-              <label for="name" class="form__label">Name</label>
+              <label for="name" class="form__label" style="color: #FFFFFF;">Name</label>
               <input type="text" id="name" name="name" class="form__input" required placeholder="Jane Doe">
             </div>
             <div class="form__group">
-              <label for="email" class="form__label">Email</label>
+              <label for="email" class="form__label" style="color: #FFFFFF;">Email</label>
               <input type="email" id="email" name="email" class="form__input" required placeholder="jane@example.com">
             </div>
             <div class="form__group form__group--full">
-              <label for="phone" class="form__label">Phone Number <span class="form__optional">(optional)</span></label>
+              <label for="phone" class="form__label" style="color: #FFFFFF;">Phone Number <span class="form__optional" style="color: rgba(255,255,255,0.7);">(optional)</span></label>
               <input type="tel" id="phone" name="phone" class="form__input" placeholder="(305) 555-1234">
             </div>
             <div class="form__group form__group--full">
-              <label for="message" class="form__label">Message</label>
+              <label for="message" class="form__label" style="color: #FFFFFF;">Message</label>
               <textarea id="message" name="message" class="form__input form__textarea" rows="5" placeholder="Briefly describe your caregiving situation and what kind of support you're looking for..."></textarea>
             </div>
             <button type="submit" class="btn btn--primary btn--full">Send</button>
-            <p class="form__note">We'll respond within 24 hours. Your information is never shared.</p>
+            <p class="form__note" style="color: rgba(255,255,255,0.85);">We'll respond within 24 hours. Your information is never shared.</p>
           </form>
         </div>
 
