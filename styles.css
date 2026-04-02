@@ -1098,4 +1098,15 @@ details[open] .faq__question::after {
   .footer__links {
     gap: var(--space-lg);
   }
+
+  /* Mobile nav CTA — full width so text doesn't wrap awkwardly */
+  .nav__links .nav__cta {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0.9rem 1.4rem;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
 }
