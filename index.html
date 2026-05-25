@@ -6,6 +6,7 @@
   <title>Caring for the Caregiver — Nursing-Led Support for Alzheimer's &amp; Dementia Care</title>
   <meta name="description" content="Expert nursing-led support for family caregivers of individuals with Alzheimer's and dementia. DNP-prepared clinicians providing assessments, care planning, and ongoing nursing services.">
   <link rel="stylesheet" href="styles.css">
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
@@ -16,7 +17,8 @@
   <nav class="nav" id="nav">
     <div class="nav__container">
       <a href="index.html" class="nav__logo">
-        <span class="nav__logo-text">Care For The<br>Caregiver Inc</span>
+        <img src="blue logo hand.png" alt="" style="height: 52px; width: auto; margin-bottom: 0.1rem;">
+        <span class="nav__logo-text">Caring For The<br>Caregiver Inc</span>
       </a>
       <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation">
         <span></span>
@@ -29,6 +31,7 @@
         <li><a href="services.html">Services</a></li>
         <li><a href="whom-we-serve.html">Whom We Serve</a></li>
         <li><a href="approach.html">Approach</a></li>
+        <li><a href="resources.html">Resources</a></li>
         <li><a href="#" onclick="openBookingModal(); return false;" class="nav__cta">Book an Appointment</a></li>
       </ul>
     </div>
@@ -45,7 +48,7 @@
         <p class="hero__subtitle" style="color: rgba(255,255,255,0.85);">Led by a Doctor of Nursing Practice–prepared clinician with over 30 years of nursing experience, providing clear, compassionate guidance for complex behavioral health needs.</p>
         <div class="hero__actions">
           <button onclick="openBookingModal()" class="btn btn--primary" style="background-color: #FFFFFF; color: #2A7C7C; border-color: #FFFFFF; cursor:pointer;">Book an Appointment</button>
-          <a href="#contact" class="btn btn--ghost" style="color: #FFFFFF; border-color: #FFFFFF; background: rgba(255,255,255,0.15);">Request a Consultation</a>
+          <a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/carynforthecaregiver/30min'}); return false;" class="btn btn--ghost" style="color: #FFFFFF; border-color: #FFFFFF; background: rgba(255,255,255,0.15);">Request a Consultation</a>
         </div>
       </div>
     </div>
@@ -79,11 +82,11 @@
         <p class="section__eyebrow">About Us</p>
         <h2 class="section__title">Structured, nursing-led, caregiver-inclusive support.</h2>
         <p class="about__lead">Caring for a loved one with Alzheimer's or dementia is one of the most complex experiences a family can face. The behavioral changes, the uncertainty, the weight of daily decisions — it requires more than good intentions. It requires expert guidance.</p>
-        <p><strong>Caring for the Caregiver</strong> is a nursing-led health services practice focused on Alzheimer's disease and related neurocognitive conditions. Led by Dr. Caryn Blair, DNP, APRN, PMHNP-BC, we provide clinical assessments, caregiver-inclusive care planning, and ongoing supportive nursing services.</p>
+        <p><strong>Caring for the Caregiver, Inc.</strong> is a nursing-led health services practice focused on Alzheimer's disease and related neurocognitive conditions. Led by Dr. Caryn Blair, DNP, APRN, PMHNP-BC, we provide clinical assessments, caregiver-inclusive care planning, and ongoing supportive nursing services.</p>
         <p>You don't have to navigate this alone.</p>
       </div>
       <div class="about__visual" style="flex-direction: column; align-items: center;">
-        <img src="4 (2).png" alt="Dr. Caryn Blair" style="width: 100%; max-width: 400px; height: 420px; object-fit: cover; border-radius: 12px;">
+        <img src="73B8ADE8-788D-45FC-80CB-B90B0CCEB32B.png" alt="Dr. Caryn Blair" style="width: 100%; max-width: 400px; height: 420px; object-fit: cover; border-radius: 12px;">
         <p style="font-family: var(--font-heading); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.06em; color: var(--teal); text-align: center; margin-top: 0.75rem;">Dr. Caryn Blair, DNP, APRN, PMHNP-BC</p>
         <div style="margin-top: 1.25rem; width: 100%; max-width: 400px;">
           <div style="display: flex; align-items: center; gap: 0.875rem; background: var(--white); border: 1px solid var(--mist); border-radius: 10px; padding: 0.875rem 1rem;">
@@ -207,7 +210,7 @@
 
         <details class="faq__item">
           <summary class="faq__question">Is this counseling or therapy?</summary>
-          <p class="faq__answer">No. Caring for the Caregiver is a nursing-led health services practice — not a counseling or therapy practice. We provide clinical nursing assessments, health information, and structured care planning. We do not provide psychotherapy, medication management, or physician medical services.</p>
+          <p class="faq__answer">No. Caring for the Caregiver, Inc. is a nursing-led health services practice — not a counseling or therapy practice. We provide clinical nursing assessments, health information, and structured care planning. We do not provide psychotherapy, medication management, or physician medical services.</p>
         </details>
 
         <details class="faq__item">
@@ -247,69 +250,43 @@
         <div style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); border-radius:14px; padding:1.75rem 1.5rem; text-align:center;">
           <p style="font-family:var(--font-heading); font-size:0.7rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.65); margin-bottom:0.5rem;">Have questions first?</p>
           <h3 style="font-family:var(--font-heading); font-size:1.05rem; color:#fff; margin-bottom:0.6rem; line-height:1.2;">Request a Consultation</h3>
-          <p style="font-size:0.95rem; color:rgba(255,255,255,0.75); margin-bottom:1.25rem; line-height:1.6;">Send us a message and we'll be in touch within 24 hours.</p>
-          <a href="#consultationForm" class="btn btn--ghost" style="color:#fff; border-color:#fff; background:transparent; width:100%; display:block;">Send a Message</a>
+          <p style="font-size:0.95rem; color:rgba(255,255,255,0.75); margin-bottom:1.25rem; line-height:1.6;">Pick a time that works for you — schedule directly on our calendar.</p>
+          <a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/carynforthecaregiver/30min'}); return false;" class="btn btn--ghost" style="color:#fff; border-color:#fff; background:transparent; width:100%; display:block;">Schedule Now</a>
         </div>
       </div>
 
-      <div id="consultationForm" class="contact__layout">
-        <div class="contact__content">
-          <form class="contact__form" id="contactForm" style="--label-color: #FFFFFF;">
-            <div class="form__group">
-              <label for="name" class="form__label" style="color: #FFFFFF;">Name</label>
-              <input type="text" id="name" name="name" class="form__input" required placeholder="Jane Doe">
-            </div>
-            <div class="form__group">
-              <label for="email" class="form__label" style="color: #FFFFFF;">Email</label>
-              <input type="email" id="email" name="email" class="form__input" required placeholder="jane@example.com">
-            </div>
-            <div class="form__group form__group--full">
-              <label for="phone" class="form__label" style="color: #FFFFFF;">Phone Number <span class="form__optional" style="color: rgba(255,255,255,0.7);">(optional)</span></label>
-              <input type="tel" id="phone" name="phone" class="form__input" placeholder="(305) 555-1234">
-            </div>
-            <div class="form__group form__group--full">
-              <label for="message" class="form__label" style="color: #FFFFFF;">Message</label>
-              <textarea id="message" name="message" class="form__input form__textarea" rows="5" placeholder="Briefly describe your caregiving situation and what kind of support you're looking for..."></textarea>
-            </div>
-            <button type="submit" class="btn btn--primary btn--full">Send</button>
-            <p class="form__note" style="color: rgba(255,255,255,0.85);">We'll respond within 24 hours. Your information is never shared.</p>
-          </form>
-        </div>
-
-        <div class="contact-info">
+      <div style="max-width: 420px; margin: 0 auto;">
+        <div class="contact-info" style="width: 100%;">
           <h3 class="contact-info__title">Contact Information</h3>
           <p class="contact-info__name">Dr. Caryn Blair</p>
           <p class="contact-info__credentials">DNP, APRN, PMHNP-BC</p>
 
           <div class="contact-info__item">
-            <svg class="contact-info__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z" stroke="currentColor" stroke-width="1.5" fill="none"/>
-            </svg>
-            <div>
-              <p class="contact-info__label">Address</p>
-              <p class="contact-info__value">2999 NE 191 Street, Suite 703<br>Aventura, Florida 33180</p>
-            </div>
+            <p class="contact-info__label">
+              <svg class="contact-info__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block; vertical-align:middle; margin-right:0.3rem;">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              </svg>Address
+            </p>
+            <p class="contact-info__value">2999 NE 191 Street, Suite 705<br>Aventura, Florida 33180</p>
           </div>
 
           <div class="contact-info__item">
-            <svg class="contact-info__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M2 7l10 7 10-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-            <div>
-              <p class="contact-info__label">Email</p>
-              <p class="contact-info__value"><a href="mailto:carynforthecaregiver@gmail.com">carynforthecaregiver@gmail.com</a></p>
-            </div>
+            <p class="contact-info__label">
+              <svg class="contact-info__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block; vertical-align:middle; margin-right:0.3rem;">
+                <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M2 7l10 7 10-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>Email
+            </p>
+            <p class="contact-info__value"><a href="mailto:carynforthecaregiver@gmail.com">carynforthecaregiver@gmail.com</a></p>
           </div>
 
           <div class="contact-info__item">
-            <svg class="contact-info__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="1.5"/>
-            </svg>
-            <div>
-              <p class="contact-info__label">Phone</p>
-              <p class="contact-info__value"><a href="tel:+13057210748">305-721-0748</a></p>
-            </div>
+            <p class="contact-info__label">
+              <svg class="contact-info__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block; vertical-align:middle; margin-right:0.3rem;">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="1.5"/>
+              </svg>Phone
+            </p>
+            <p class="contact-info__value"><a href="tel:+13057210748">305-721-0748</a></p>
           </div>
         </div>
       </div>
@@ -321,7 +298,8 @@
     <div class="footer__container">
       <div class="footer__top">
         <div class="footer__brand">
-          <span class="footer__logo-text">Care For The<br>Caregiver Inc</span>
+          <img src="white logo hand.png" alt="" style="height: 52px; width: auto; margin-bottom: 0.1rem; display: block;">
+          <span class="footer__logo-text">Caring For The<br>Caregiver Inc</span>
           <p class="footer__tagline">Nursing-led support for those navigating Alzheimer's and dementia care.</p>
         </div>
         <div class="footer__links">
@@ -331,6 +309,7 @@
             <a href="services.html">Services</a>
             <a href="whom-we-serve.html">Whom We Serve</a>
             <a href="approach.html">Approach</a>
+            <a href="resources.html">Resources</a>
           </div>
           <div class="footer__col">
             <h4>Connect</h4>
@@ -340,13 +319,15 @@
         </div>
       </div>
       <div class="footer__bottom">
-        <p>&copy; 2025 Caring for the Caregiver. All rights reserved.</p>
+        <p>&copy; 2026 Caring for the Caregiver, Inc. All rights reserved.</p>
         <p class="footer__crisis">If you are in crisis, please call the <strong>988 Suicide &amp; Crisis Lifeline</strong> by dialing <strong>988</strong>.</p>
       </div>
     </div>
   </footer>
 
   <script src="script.js"></script>
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+  <script type="text/javascript">window.addEventListener('load', function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/carynforthecaregiver/30min', text: 'Request a Consultation', color: '#2A7C7C', textColor: '#ffffff', branding: true }); });</script>
   <script>(function(){let t=document.createElement("style");t.innerText=".booking-button{background-color:#2A7C7C;color:white;position:fixed;bottom:1.25rem;right:1.25rem;width:4.5rem;height:4.5rem;padding:1.25rem;display:flex;align-items:center;justify-content:center;border-radius:9999px;box-shadow:0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -2px rgba(0,0,0,0.05);cursor:pointer;border:none}.booking-button:hover{background-color:#1E5F5F}.booking-button:focus{outline:none;outline:2px solid rgba(107,114,128,0.5)}",document.head.appendChild(t);let n=document.createElement("div");n.innerHTML='<div id="iframeContainer" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:1000"><div style="position:relative;width:90%;height:90%;margin:2% auto;background:white;border-radius:8px;overflow:hidden"><iframe id="bookingIframe" style="width:100%;height:100%;border:none"></iframe></div></div><button class="booking-button" id="bookingButton"><svg version="1.1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 24 24" xml:space="preserve"><path class="st0" d="M20 3h-2c0-.6-.4-1-1-1s-1 .4-1 1H8c0-.6-.4-1-1-1s-1 .4-1 1H4c-1.1 0-2 .9-2 2v15c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 17H4V10h16v10zm0-12H4V5h2c0 .6.4 1 1 1s1-.4 1-1h8c0 .6.4 1 1 1s1-.4 1-1h2v3z"/><path class="st0" d="M7 12h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2zm-8 4h2v2H7zm4 0h2v2h-2z"/></svg></button>',document.body.appendChild(n),document.getElementById("bookingButton").addEventListener("click",function(){let e=document.getElementById("iframeContainer"),o=document.getElementById("bookingIframe");o.src="https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_111016",e.style.display="block"}),document.getElementById("iframeContainer").addEventListener("click",function(e){if(e.target===this)this.style.display="none"})})();</script>
 </body>
 </html>
