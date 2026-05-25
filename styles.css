@@ -219,15 +219,34 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 .nav__container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0.8rem 2rem;
+  padding: 1.6rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+.nav__logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+
 .nav__logo-img {
   height: 80px;
   width: auto;
+}
+
+.nav__logo-text {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: var(--teal);
+  text-decoration: none;
+  text-align: center;
 }
 
 .nav__links {
