@@ -772,6 +772,14 @@ details[open] .faq__question::after {
   margin: 0 auto;
 }
 
+.booking-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  max-width: 640px;
+  margin: 0 auto var(--space-lg);
+}
+
 .contact__layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1161,6 +1169,11 @@ details[open] .faq__question::after {
 
   .contact__form {
     grid-template-columns: 1fr;
+  }
+
+  .booking-cards {
+    grid-template-columns: 1fr;
+    max-width: 360px;
   }
 
   .footer__links {
