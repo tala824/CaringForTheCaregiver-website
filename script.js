@@ -2,6 +2,15 @@
    Caring for the Caregiver — Scripts
    ============================================ */
 
+function openBookingModal() {
+  var container = document.getElementById('iframeContainer');
+  var iframe = document.getElementById('bookingIframe');
+  if (container && iframe) {
+    iframe.src = 'https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_111016';
+    container.style.display = 'block';
+  }
+}
+
 (function () {
   'use strict';
 
@@ -61,6 +70,7 @@
 
   // --- Contact form handling ---
   var form = document.getElementById('contactForm');
+  if (!form) return;
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
